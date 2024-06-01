@@ -1,3 +1,12 @@
+html {
+  --black-color: #F5F3F0;
+  --dark-gray-color: #434040;
+  --gray-color: #656464;
+  --light-gray-color: #cdcbcb;
+  --white-color: #f5f3f0;
+  --creme-color: #edebe8;
+}
+
 .px-main {
-  padding: 0 12rem;
+  padding: 0 7.5rem;
 }

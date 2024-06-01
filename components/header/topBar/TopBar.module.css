@@ -11,6 +11,13 @@
 
 .rightColumn {
   display: flex;
-  justify-content: flex-end;
   flex: 1;
+  justify-content: flex-end;
+}
+
+.navWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: start;
 }

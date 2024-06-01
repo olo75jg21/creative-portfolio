@@ -1,10 +1,12 @@
+import { NavigationData } from '@/types'
+
 const headerTopRowData = [
   'Jakub<br>Olcha',
   'Fronted Developer<br>at Pleo',
   'Based in Cracow<br>Poland'
 ]
 
-const navigationData = [
+const navigationData: NavigationData[] = [
   {
     value: 'About',
     link: 'about'

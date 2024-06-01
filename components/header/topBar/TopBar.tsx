@@ -1,5 +1,6 @@
-import { headerTopRowData } from "@/data";
+import { headerTopRowData, navigationData } from "@/data";
 import styles from "./TopBar.module.css";
+import { NavigationData } from "@/types";
 
 const TopBar = () => {
   return (
@@ -9,7 +10,13 @@ const TopBar = () => {
           <div key={value} dangerouslySetInnerHTML={{ __html: value }} />
         ))}
       </div>
-      <nav className={styles.rightColumn}>nav</nav>
+      <div className={styles.rightColumn}>
+        <nav className={styles.navWrapper}>
+          {navigationData.map((value: NavigationData) => (
+            <div key={value.value}>{value.value}</div>
+          ))}
+        </nav>
+      </div>
     </div>
   );
 };
