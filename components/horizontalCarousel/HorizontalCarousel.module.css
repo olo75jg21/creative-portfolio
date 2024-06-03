@@ -1,0 +1,22 @@
+.carousel {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.innerCarousel {
+  display: flex;
+  white-space: nowrap;
+}
+
+.carouselItemWrapper {
+  flex-shrink: 0;
+}
+
+.carouselItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}

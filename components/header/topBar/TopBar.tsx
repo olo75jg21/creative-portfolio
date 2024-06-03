@@ -7,16 +7,22 @@ const TopBar = () => {
     <div className={styles.wrapper}>
       <div className={styles.leftColumn}>
         {headerTopRowData.map((value) => (
-          <div key={value} dangerouslySetInnerHTML={{ __html: value }} />
+          <div
+            key={value}
+            className="typo-sm"
+            dangerouslySetInnerHTML={{ __html: value }}
+          />
         ))}
       </div>
-      <div className={styles.rightColumn}>
-        <nav className={styles.navWrapper}>
+      <nav className={styles.rightColumn}>
+        <li className={styles.navWrapper}>
           {navigationData.map((value: NavigationData) => (
-            <div key={value.value}>{value.value}</div>
+            <ul className="typo-sm" key={value.value}>
+              {value.value}
+            </ul>
           ))}
-        </nav>
-      </div>
+        </li>
+      </nav>
     </div>
   );
 };

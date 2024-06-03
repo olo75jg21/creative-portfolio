@@ -6,15 +6,42 @@
   flex-direction: column;
   justify-content: space-between;
   padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-bottom: 5rem;
 }
 
-.imageCarouselWrapper {
+.imageAndCarouselWrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.imageWrapper {
+  flex: 1;
+  background: blanchedalmond;
+  height: 50vh;
+}
+
+.carouselWrapper {
+  flex: 2;
+  overflow: hidden;
+}
+
+.bottomRowTexts {
   display: flex;
   justify-content: space-between;
 }
 
-.textsWrapper {
+.titleWrapper {
+  flex: 1;
+}
+
+.descriptionWrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  flex: 1;
+}
+
+.description {
+  width: 50%;
 }
