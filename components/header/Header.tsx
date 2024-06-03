@@ -4,6 +4,7 @@ import TopBar from "./topBar/TopBar";
 import styles from "./Header.module.css";
 import HorizontalCarousel from "../horizontalCarousel/HorizontalCarousel";
 import Picture from "@/assets/temp-picture.jpg";
+import TextReveal from "@/animations/TextReveal";
 
 const Header = () => {
   return (
@@ -14,19 +15,27 @@ const Header = () => {
           {/* <Image src={Picture} alt="picture" /> */}
         </div>
         <div className={`${styles.carouselWrapper} typo-3xl`}>
-          <HorizontalCarousel text="Jakub Olcha" />
+          <TextReveal>
+            <HorizontalCarousel text="Jakub Olcha" />
+          </TextReveal>
         </div>
       </div>
       <div className={styles.bottomRowTexts}>
         <div className={`typo-xl ${styles.titleWrapper}`}>
-          <h1>FRONTEND</h1>
-          <h1>DEVELOPER</h1>
+          <TextReveal>
+            <h1>FRONTEND</h1>
+          </TextReveal>
+          <TextReveal>
+            <h1>DEVELOPER</h1>
+          </TextReveal>
         </div>
         <div className={`${styles.descriptionWrapper}`}>
-          <p className={`typo-md ${styles.description}`}>
-            I craft dynamic and visually stunning web experiences. Explore my
-            work and lets build something amazing together.
-          </p>
+          <TextReveal>
+            <p className={`typo-md ${styles.description}`}>
+              I craft dynamic and visually stunning web experiences. Explore my
+              work and lets build something amazing together.
+            </p>
+          </TextReveal>
         </div>
       </div>
     </div>
