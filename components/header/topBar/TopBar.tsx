@@ -4,7 +4,7 @@ import { NavigationData } from "@/types";
 
 const TopBar = () => {
   return (
-    <div className={styles.wrapper}>
+    <div className={`${styles.wrapper} px-main`}>
       <div className={styles.leftColumn}>
         {headerTopRowData.map((value) => (
           <div

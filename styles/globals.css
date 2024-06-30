@@ -5,8 +5,6 @@ html {
   --light-gray-color: #cdcbcb;
   --white-color: #f5f3f0;
   --creme-color: #edebe8;
-}
 
-.px-main {
-  padding: 0 7.5rem;
+  --px: clamp(2rem, 6vw, 7.5rem);
 }

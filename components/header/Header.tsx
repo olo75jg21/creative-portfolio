@@ -8,19 +8,21 @@ import TextReveal from "@/animations/TextReveal";
 
 const Header = () => {
   return (
-    <div className={`${styles.container} px-main`}>
+    <div className={`${styles.container}`}>
       <TopBar />
-      <div className={styles.imageAndCarouselWrapper}>
+      <div className={`${styles.imageAndCarouselWrapper} px-main-left`}>
         <div className={styles.imageWrapper}>
           {/* <Image src={Picture} alt="picture" /> */}
         </div>
         <div className={`${styles.carouselWrapper} typo-3xl`}>
-          <TextReveal>
-            <HorizontalCarousel text="Jakub Olcha" />
-          </TextReveal>
+          <HorizontalCarousel speed={10} direction="left">
+            <div>Item 3</div>
+            <div>Item 3</div>
+            <div>Item 3</div>
+          </HorizontalCarousel>
         </div>
       </div>
-      <div className={styles.bottomRowTexts}>
+      <div className={`${styles.bottomRowTexts} px-main`}>
         <div className={`typo-xl ${styles.titleWrapper}`}>
           <TextReveal>
             <h1>FRONTEND</h1>

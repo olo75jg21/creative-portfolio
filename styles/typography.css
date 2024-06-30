@@ -27,5 +27,5 @@
 }
 
 .typo-3xl {
-  font-size: 12rem;
+  font-size: clamp(4rem, 12vw, 12rem);
 }

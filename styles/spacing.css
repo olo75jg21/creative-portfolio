@@ -1,0 +1,11 @@
+.px-main {
+  padding: 0 var(--px);
+}
+
+.px-main-right {
+  padding-right: var(--px);
+}
+
+.px-main-left {
+  padding-left: var(--px);
+}

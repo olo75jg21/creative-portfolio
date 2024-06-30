@@ -1,22 +1,31 @@
-.carousel {
-  overflow: hidden;
+/* InfiniteLooper.module.css */
+@keyframes slideAnim {
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.looper {
   width: 100%;
-  position: relative;
+  overflow: hidden;
 }
 
-.innerCarousel {
+.looper__innerList {
   display: flex;
-  white-space: nowrap;
-}
-
-.carouselItemWrapper {
-  flex-shrink: 0;
-}
-
-.carouselItem {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  height: 100%;
+  width: fit-content;
+}
+
+.looper__innerList[data-animate="true"] .looper__listInstance {
+  animation: slideAnim linear infinite;
+}
+
+.looper__listInstance {
+  display: flex;
+  width: max-content;
+  animation: none;
 }
