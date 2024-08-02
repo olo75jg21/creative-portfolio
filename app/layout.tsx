@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import "@/styles/globals.css";
 import "@/styles/reset.css";
 import "@/styles/typography.css";
 import "@/styles/spacing.css";
+import Scroll from "@/components/scroll/Scroll";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Open_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Jakub Olcha",
@@ -19,7 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Scroll>{children}</Scroll>
+      </body>
     </html>
   );
 }

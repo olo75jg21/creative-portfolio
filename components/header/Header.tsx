@@ -1,10 +1,8 @@
 import React from "react";
-import Image from "next/image";
 import TopBar from "./topBar/TopBar";
 import styles from "./Header.module.css";
 import HorizontalCarousel from "../horizontalCarousel/HorizontalCarousel";
-import Picture from "@/assets/temp-picture.jpg";
-import TextReveal from "@/animations/TextReveal";
+import RevealTextOnScroll from "@/animations/revealTextOnScroll/RevealTextOnScroll";
 
 const Header = () => {
   return (
@@ -14,30 +12,26 @@ const Header = () => {
         <div className={styles.imageWrapper}>
           {/* <Image src={Picture} alt="picture" /> */}
         </div>
-        <div className={`${styles.carouselWrapper} typo-3xl`}>
-          <HorizontalCarousel speed={10} direction="left">
-            <div>Item 3</div>
-            <div>Item 3</div>
-            <div>Item 3</div>
+        <div className={`${styles.carouselWrapper} typo-2xl`}>
+          <HorizontalCarousel speed={10} direction="right">
+            <div> Frontend </div>
+          </HorizontalCarousel>
+
+          <HorizontalCarousel speed={8} direction="left">
+            <div> Developer </div>
           </HorizontalCarousel>
         </div>
       </div>
       <div className={`${styles.bottomRowTexts} px-main`}>
         <div className={`typo-xl ${styles.titleWrapper}`}>
-          <TextReveal>
-            <h1>FRONTEND</h1>
-          </TextReveal>
-          <TextReveal>
-            <h1>DEVELOPER</h1>
-          </TextReveal>
+          <h1>FRONTEND</h1>
+          <h1>DEVELOPER</h1>
         </div>
-        <div className={`${styles.descriptionWrapper}`}>
-          <TextReveal>
-            <p className={`typo-md ${styles.description}`}>
-              I craft dynamic and visually stunning web experiences. Explore my
-              work and lets build something amazing together.
-            </p>
-          </TextReveal>
+        <div className={`typo-md ${styles.descriptionWrapper}`}>
+          <RevealTextOnScroll
+            text="Crafting visually stunning and highly interactive web experiences
+              with a blend of creativity and technical expertise."
+          />
         </div>
       </div>
     </div>

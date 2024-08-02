@@ -1,0 +1,11 @@
+.paragraph {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.word {
+  margin-top: 12px;
+  overflow: hidden;
+  display: inline-block;
+}

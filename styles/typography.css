@@ -1,31 +1,36 @@
 .typo-xs {
-  font-size: 1rem;
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
 }
 
 .typo-sm {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2vw, 1.2rem);
 }
 
 .typo-rg {
-  font-size: 1.6rem;
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
 }
 
+/* Medium Typography Variants */
 .typo-md {
-  font-size: 1.9rem;
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
 }
 
 .typo-lg {
-  font-size: 2.3rem;
+  font-size: clamp(1.6rem, 3.5vw, 2.3rem);
 }
 
 .typo-xl {
-  font-size: 7rem;
+  font-size: clamp(2rem, 5vw, 3rem);
 }
 
 .typo-2xl {
-  font-size: 9rem;
+  font-size: clamp(3rem, 8vw, 5rem);
 }
 
 .typo-3xl {
-  font-size: clamp(4rem, 12vw, 12rem);
+  font-size: clamp(4rem, 10vw, 7rem);
+}
+
+.typo-4xl {
+  font-size: clamp(5rem, 12vw, 9rem);
 }
