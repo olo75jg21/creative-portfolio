@@ -1,7 +1,11 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import style from "./Cursor.module.css";
+
+enum CursorVariant {
+  DEFAULT,
+}
 
 const Cursor = () => {
   const borderRef = useRef<HTMLDivElement>(null);
@@ -24,6 +28,12 @@ const Cursor = () => {
       document.removeEventListener("mousemove", handleMouseMove);
     };
   }, [borderRef, innerRef]);
+
+  const [cursorVariant, setCursorVariant] = useState<CursorVariant>(
+    CursorVariant.DEFAULT
+  );
+
+  const ref = React.useRef(null);
 
   return (
     <div className={style.cursor} ref={borderRef}>
