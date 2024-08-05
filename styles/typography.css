@@ -16,6 +16,7 @@
 }
 
 .typo-lg {
+  line-height: normal;
   font-size: clamp(1.6rem, 3.5vw, 2.3rem);
 }
 

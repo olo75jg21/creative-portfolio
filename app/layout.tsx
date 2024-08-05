@@ -5,6 +5,7 @@ import "@/styles/reset.css";
 import "@/styles/typography.css";
 import "@/styles/spacing.css";
 import Scroll from "@/components/scroll/Scroll";
+import Cursor from "@/components/cursor/Cursor";
 
 const inter = Open_Sans({ subsets: ["latin"] });
 
@@ -21,7 +22,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Scroll>{children}</Scroll>
+        <Scroll>
+          {children}
+          <Cursor />
+        </Scroll>
       </body>
     </html>
   );
