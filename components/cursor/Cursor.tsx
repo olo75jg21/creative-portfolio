@@ -2,32 +2,16 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import style from "./Cursor.module.css";
+import useMousePosition from "@/hooks/useMousePosition";
+import { motion } from "framer-motion";
 
 enum CursorVariant {
-  DEFAULT,
+  DEFAULT = "default",
 }
 
 const Cursor = () => {
   const borderRef = useRef<HTMLDivElement>(null);
   const innerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleMouseMove = (event: MouseEvent) => {
-      if (borderRef.current && innerRef.current) {
-        const { clientX, clientY } = event;
-        const mouseX = clientX - borderRef.current.clientWidth / 2;
-        const mouseY = clientY - borderRef.current.clientHeight / 2;
-        borderRef.current.style.left = `${mouseX}px`;
-        borderRef.current.style.top = `${mouseY}px`;
-      }
-    };
-
-    document.addEventListener("mousemove", handleMouseMove);
-
-    return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, [borderRef, innerRef]);
 
   const [cursorVariant, setCursorVariant] = useState<CursorVariant>(
     CursorVariant.DEFAULT
@@ -35,10 +19,33 @@ const Cursor = () => {
 
   const ref = React.useRef(null);
 
+  const { x, y } = useMousePosition();
+
+  const variants = {
+    default: {
+      opacity: 1,
+      height: 10,
+      width: 10,
+      fontSize: "16px",
+      backgroundColor: "#1e91d6",
+      x,
+      y,
+      transition: {
+        type: "spring",
+        mass: 0.6,
+      },
+    },
+  };
+
   return (
-    <div className={style.cursor} ref={borderRef}>
+    <motion.div
+      className={style.cursor}
+      ref={borderRef}
+      variants={variants}
+      animate={cursorVariant}
+    >
       <div ref={innerRef} />
-    </div>
+    </motion.div>
   );
 };
 
