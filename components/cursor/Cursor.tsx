@@ -1,50 +1,77 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import style from "./Cursor.module.css";
 import useMousePosition from "@/hooks/useMousePosition";
-import { motion } from "framer-motion";
+import { motion, useSpring } from "framer-motion";
 
 enum CursorVariant {
   DEFAULT = "default",
 }
 
 const Cursor = () => {
-  const borderRef = useRef<HTMLDivElement>(null);
-  const innerRef = useRef<HTMLDivElement>(null);
-
+  const [outerCursorSize, setOuterCursorSize] = useState<number>(50);
+  const [innerCursorSize, setInnerCursorSize] = useState<number>(30);
   const [cursorVariant, setCursorVariant] = useState<CursorVariant>(
     CursorVariant.DEFAULT
   );
 
-  const ref = React.useRef(null);
+  const { x: xOuter, y: yOuter } = useMousePosition({
+    centerOffset: outerCursorSize,
+  });
+  const { x: xInner, y: yInner } = useMousePosition({
+    centerOffset: innerCursorSize,
+  });
 
-  const { x, y } = useMousePosition();
+  const outerSmoothOptions = { damping: 50, stiffness: 300, mass: 0.1 };
+  const outerSmoothMouse = {
+    x: useSpring(xOuter, outerSmoothOptions),
+    y: useSpring(yOuter, outerSmoothOptions),
+  };
 
-  const variants = {
-    default: {
+  const innerSmoothOptions = { damping: 40, stiffness: 2000, mass: 0.1 };
+  const innerSmoothMouse = {
+    x: useSpring(xInner, innerSmoothOptions),
+    y: useSpring(yInner, innerSmoothOptions),
+  };
+
+  const outerCursorVariants = {
+    default: () => ({
       opacity: 1,
-      height: 10,
-      width: 10,
+      height: outerCursorSize,
+      width: outerCursorSize,
       fontSize: "16px",
-      backgroundColor: "#1e91d6",
-      x,
-      y,
-      transition: {
-        type: "spring",
-        mass: 0.6,
-      },
-    },
+    }),
+  };
+
+  const innerCursorVariants = {
+    default: () => ({
+      opacity: 1,
+      height: innerCursorSize,
+      width: innerCursorSize,
+      fontSize: "16px",
+    }),
   };
 
   return (
     <motion.div
-      className={style.cursor}
-      ref={borderRef}
-      variants={variants}
+      className={style.outerCursor}
+      style={{
+        left: outerSmoothMouse.x,
+        top: outerSmoothMouse.y,
+      }}
+      variants={outerCursorVariants}
       animate={cursorVariant}
     >
-      <div ref={innerRef} />
+      <motion.div
+        className={style.innerCursor}
+        style={{
+          left: innerSmoothMouse.x,
+          top: innerSmoothMouse.y,
+        }}
+        variants={innerCursorVariants}
+        animate={cursorVariant}
+      />
     </motion.div>
   );
 };

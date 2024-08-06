@@ -1,20 +1,23 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import { MotionValue, useMotionValue } from "framer-motion";
 
-// Define the type for the mouse position
-interface MousePosition {
-  x: number;
-  y: number;
-}
+type Props = {
+  centerOffset?: number;
+};
 
-const useMousePosition = (): MousePosition => {
-  const [mousePosition, setMousePosition] = useState<MousePosition>({
-    x: 0,
-    y: 0,
-  });
+type MousePosition = {
+  x: MotionValue<number>;
+  y: MotionValue<number>;
+};
+
+const useMousePosition = ({ centerOffset = 15 }: Props): MousePosition => {
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
 
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
-      setMousePosition({ x: event.clientX, y: event.clientY });
+      x.set(event.clientX - centerOffset / 2);
+      y.set(event.clientY - centerOffset / 2);
     };
 
     window.addEventListener("mousemove", handleMouseMove);
@@ -22,9 +25,9 @@ const useMousePosition = (): MousePosition => {
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
-  }, []);
+  }, [centerOffset]);
 
-  return mousePosition;
+  return { x, y };
 };
 
 export default useMousePosition;
