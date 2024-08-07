@@ -11,7 +11,7 @@ enum CursorVariant {
 
 const Cursor = () => {
   const [outerCursorSize, setOuterCursorSize] = useState<number>(50);
-  const [innerCursorSize, setInnerCursorSize] = useState<number>(30);
+  const [innerCursorSize, setInnerCursorSize] = useState<number>(10);
   const [cursorVariant, setCursorVariant] = useState<CursorVariant>(
     CursorVariant.DEFAULT
   );
