@@ -4,36 +4,8 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   padding-top: 3rem;
   padding-bottom: 5rem;
-}
-
-.imageAndCarouselWrapper {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  justify-content: space-between;
-}
-
-.imageWrapper {
-  flex: 1;
-  background: blanchedalmond;
-  height: 50vh;
-}
-
-.carouselWrapper {
-  flex: 2;
-  overflow: hidden;
-}
-
-.bottomRowTexts {
-  display: flex;
-  justify-content: space-between;
-}
-
-.titleWrapper {
-  flex: 1;
 }
 
 .descriptionWrapper {
@@ -42,6 +14,21 @@
   flex: 1;
 }
 
+.topRowContainer {
+  display: flex;
+  margin-top: 4rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .description {
-  width: 50%;
+  width: 30%;
+}
+
+.header {}
+
+.secondHeaderContainer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
 }

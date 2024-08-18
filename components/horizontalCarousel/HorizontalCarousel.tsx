@@ -15,11 +15,11 @@ interface InfiniteLooperProps {
   children: ReactNode;
 }
 
-const InfiniteLooper: React.FC<InfiniteLooperProps> = ({
+const InfiniteLooper = ({
   speed,
   direction,
   children,
-}) => {
+}: InfiniteLooperProps) => {
   const [looperInstances, setLooperInstances] = useState(1);
   const outerRef = useRef<HTMLDivElement>(null);
   const innerRef = useRef<HTMLDivElement>(null);

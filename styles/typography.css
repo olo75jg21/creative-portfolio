@@ -10,7 +10,6 @@
   font-size: clamp(1.2rem, 2.5vw, 1.6rem);
 }
 
-/* Medium Typography Variants */
 .typo-md {
   font-size: clamp(1.4rem, 3vw, 1.9rem);
 }
@@ -34,4 +33,24 @@
 
 .typo-4xl {
   font-size: clamp(5rem, 12vw, 9rem);
+}
+
+.typo-5xl {
+  font-size: clamp(9rem, 15vw, 14rem);
+}
+
+.typo-normal {
+  font-weight: 400;
+}
+
+.typo-regular {
+  font-weight: 500;
+}
+
+.typo-semibold {
+  font-weight: 600;
+}
+
+.typo-bold {
+  font-weight: 700;
 }

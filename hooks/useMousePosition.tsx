@@ -25,7 +25,7 @@ const useMousePosition = ({ centerOffset = 15 }: Props): MousePosition => {
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
-  }, [centerOffset]);
+  }, [centerOffset, x, y]);
 
   return { x, y };
 };
