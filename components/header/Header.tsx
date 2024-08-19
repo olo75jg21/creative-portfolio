@@ -2,7 +2,6 @@ import React from "react";
 import TopBar from "./topBar/TopBar";
 import styles from "./Header.module.css";
 import HorizontalCarousel from "../horizontalCarousel/HorizontalCarousel";
-import Container from "../layout/container/Container";
 
 const Header = () => {
   return (

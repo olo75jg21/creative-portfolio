@@ -7,4 +7,6 @@ html {
   --creme-color: #edebe8;
 
   --px: clamp(2rem, 6vw, 7.5rem);
+
+  --bg-transition: background .5s ease;
 }
