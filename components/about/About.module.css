@@ -1,5 +1,6 @@
 .container {
   background: var(--bgColor);
-  padding: 5vh 0;
+  padding: 5vh 30vh;
   transition: var(--bg-transition);
+  height: 100vh;
 }

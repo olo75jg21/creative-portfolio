@@ -1,6 +1,6 @@
 "use client";
 
-import setCSSVariable from "@/utils/setCssVariable";
+import setCSSVariable from "@/utils/setCSSVariable";
 import { createContext, useCallback, useContext, useState } from "react";
 
 type Background = "var(--white-color)" | "var(--creme-color)";
