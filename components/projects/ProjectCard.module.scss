@@ -1,0 +1,48 @@
+.cardContainer {
+  height: 100svh;
+  top: 0px;
+  position: sticky;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid black;
+  width: 50vw;
+  height: 50vh;
+}
+
+.thumbnail {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.cardContent {
+  padding: 15px;
+}
+
+.projectTitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.projectDescription {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.technology {
+  background-color: #f3f3f3;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 12px;
+}
